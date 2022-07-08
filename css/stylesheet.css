@@ -1,0 +1,47 @@
+
+.background{
+    width: 100%;
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+#morning{
+    border-radius: 10px;
+}
+.buttons{
+    display: flex;
+    position: absolute;
+   top: 20px;
+   right: 20%;
+   gap: 20px;
+   flex-direction: column;
+
+}
+#name{
+    position: absolute;
+    top: 20px;
+    left: 20%;
+    font-size: 35px;
+    color: white;
+}
+.stats{
+    display:flex;
+    position:absolute;
+    top: 75%;
+    left: 33%;
+    gap: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+#pet{
+   
+   position: absolute;
+    bottom: 10px;
+    left: 20%;
+    animation: jump 1.5s ease-in infinite alternate;
+}
+@keyframes jump {
+    from{ bottom:10px}
+    to{bottom: 100px;}
+}
