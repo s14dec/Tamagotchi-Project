@@ -90,7 +90,7 @@ class Pet{
                     alert(`${tamaPet.name} has perished due to Sleepiness`)
                     clearInterval(sleepIncrease)
                 }
-            }, 9000)
+            }, 7000)
 
 
             lightsButton.addEventListener("click", () => {
@@ -124,8 +124,23 @@ class Pet{
                 tamaPet.playPet()
                 boredomStat.innerHTML = tamaPet.boredom
             })
+        },
+
+        ageManage() {
+            const ageIncrease = setInterval(() => {
+                tamaPet.age++
+                ageStat.innerHTML = tamaPet.age
+
+                if(tamaPet.age == 2){
+                    alert(`${tamaPet.name} has evolved!`)
+                    petImage.src = 'pictures/sprite2.png'
+                }
+                if(tamaPet.age == 5){
+                    alert(`${tamaPet.name} has evolved once more!`)
+                    petImage.src = 'pictures/sprite3.png'
+                }
+            }, 9000)
         }
-        
 
 
 
@@ -136,7 +151,7 @@ class Pet{
 
     }
 
-    gameTime.boredomManage()
-
+    
+gameTime.ageManage()
 
     

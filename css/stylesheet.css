@@ -38,14 +38,15 @@
 }
 
 #pet{
-   
+   max-height: 800px;
+   max-width: 800px;
    position: absolute;
-    bottom: 10px;
-    left: 20%;
+    bottom: 20%;
+    left: 25%;
     animation: jump 1.5s ease-in infinite alternate;
     
 }
 @keyframes jump {
-    from{ bottom:10px}
+    from{ bottom:20%}
     to{bottom: 100px;}
 }
