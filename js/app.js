@@ -55,11 +55,13 @@ class Pet{
 
     const tamaPet = new Pet("", 1, 1, 1, 0)
 
+
+
     const gameTime = {
 
         nameSet() {
             tamaPet.name = prompt('What do you want to name your pet?','Pet name')
-            petName = tamaPet.name
+            petName.innerHTML = tamaPet.name
         },
 
 
@@ -140,18 +142,25 @@ class Pet{
                     petImage.src = 'pictures/sprite3.png'
                 }
             }, 9000)
+        },
+
+        startGame(){
+            gameTime.nameSet()
+            gameTime.hungerManage()
+            gameTime.sleepinessManage()
+            gameTime.boredomManage()
+            gameTime.ageManage()
+
+            
+                
+            }
         }
-
-
-
-
-
-
-
-
-    }
-
     
-gameTime.ageManage()
+
+    startButton.addEventListener('click',(stop) => {
+        stop.target.disabled = true
+        gameTime.startGame()
+    })
+
 
     
