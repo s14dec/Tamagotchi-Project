@@ -107,6 +107,23 @@ class Pet{
                 
             })
             
+        },
+
+        boredomManage() {
+            const boredomIncrease = setInterval(() => {
+                tamaPet.boredom++
+                boredomStat.innerHTML = tamaPet.boredom
+
+                if(tamaPet.boredom >= 10){
+                    alert(`${tamaPet.name} has perished due to Boredom`)
+                    clearInterval(boredomIncrease)
+                }
+            }, 3000)
+
+            playButton.addEventListener("click", () => {
+                tamaPet.playPet()
+                boredomStat.innerHTML = tamaPet.boredom
+            })
         }
         
 
@@ -119,7 +136,7 @@ class Pet{
 
     }
 
-    gameTime.sleepinessManage()
+    gameTime.boredomManage()
 
 
     
