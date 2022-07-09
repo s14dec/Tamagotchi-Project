@@ -23,7 +23,11 @@ const ageStat = document.querySelector('#ageNum')
 
 const petImage = document.querySelector('#pet')
 
-const background = document.querySelector('.background')
+const background = document.querySelector('#day')
+
+// Light Switch
+
+let light = true
 
 
 class Pet{
@@ -53,7 +57,13 @@ class Pet{
 
     const gameTime = {
 
-        hungerManage(){
+        nameSet() {
+            tamaPet.name = prompt('What do you want to name your pet?','Pet name')
+            petName = tamaPet.name
+        },
+
+
+        hungerManage() {
             const hungerIncrease = setInterval(() => {
                 tamaPet.hunger++
                 hungerStat.innerHTML = tamaPet.hunger
@@ -69,6 +79,34 @@ class Pet{
                 hungerStat.innerHTML = tamaPet.hunger
             })
 
+        },
+
+        sleepinessManage() {
+            const sleepIncrease = setInterval(() => {
+                tamaPet.sleepiness++
+                sleepinessStat.innerHTML = tamaPet.sleepiness
+
+                if(tamaPet.sleepiness >= 10){
+                    alert(`${tamaPet.name} has perished due to Sleepiness`)
+                    clearInterval(sleepIncrease)
+                }
+            }, 9000)
+
+
+            lightsButton.addEventListener("click", () => {
+                if(light == true){
+                    background.src = 'pictures/background night.jpeg'
+                    light = false
+                    tamaPet.napTime()
+                sleepinessStat.innerHTML = tamaPet.sleepiness
+                }
+                else{
+                    background.src = 'pictures/background morning.jpeg'
+                    light = true
+                }
+                
+            })
+            
         }
         
 
@@ -77,9 +115,11 @@ class Pet{
 
 
 
+
+
     }
 
+    gameTime.sleepinessManage()
 
 
-
-    gameTime.hungerManage()
+    

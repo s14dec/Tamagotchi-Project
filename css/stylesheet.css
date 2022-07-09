@@ -5,16 +5,19 @@
     position: relative;
     text-align: center;
 }
-#morning{
+#day{
     border-radius: 10px;
 }
 .buttons{
+    min-height: 20px;
     display: flex;
     position: absolute;
    top: 20px;
    right: 20%;
    gap: 20px;
    flex-direction: column;
+   z-index: +2;
+  
 
 }
 #name{
@@ -40,6 +43,7 @@
     bottom: 10px;
     left: 20%;
     animation: jump 1.5s ease-in infinite alternate;
+    
 }
 @keyframes jump {
     from{ bottom:10px}
